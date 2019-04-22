@@ -38,4 +38,8 @@ WHERE TABLE_NAME = 'tblIndividual'
 		,'Staff'
 		,'Age'
 		,'CGLeaderStatus'
+		, 'BackgroundCheckDate'
+		, 'BGCheckHold'
+		, 'BGCheckHoldReason'
+		, 'BackgroundCheckNote'
 	)

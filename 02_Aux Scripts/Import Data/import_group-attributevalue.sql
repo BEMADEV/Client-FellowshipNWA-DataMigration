@@ -9,6 +9,6 @@ Select
 	, NEWID() as [Guid]
 From [_tmp_group-attributevalue] tav
 Join Attribute a on a.[Key] = tav.AttributeKey
-Join [Group] g on g.ForeignId = tav.Groupid and g.ForeignKey = @ForeignKey
+Join [Group] g on g.ForeignId = tav.Groupid and g.ForeignKey = @ForeignKey and GroupTypeId != 10
 Left Join AttributeValue v on v.EntityId = g.id and v.AttributeId = a.Id
 Where v.id is null
