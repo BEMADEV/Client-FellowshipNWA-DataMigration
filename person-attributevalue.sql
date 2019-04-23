@@ -54,7 +54,7 @@ FROM
 		,CAST(Baptized AS NVARCHAR(MAX)) AS Baptized
 		,CONVERT(NVARCHAR(MAX), KeyTagIssueDate, 101) AS KeyTagIssueDate
 		,CAST(EmerContactNum AS NVARCHAR(MAX)) AS EmerContactNum
-		,CAST(BGCheckHold AS NVARCHAR(MAX)) AS BGCheckHold
+		,CAST(IIF(BGCheckHold = 1, 'True', 'False') AS NVARCHAR(MAX))  AS BGCheckHold
 		,CAST(BGCheckHoldReason AS NVARCHAR(MAX)) AS BGCheckHoldReason
 		,CAST(DateBackgroundCheckEmailSent AS NVARCHAR(MAX)) AS DateBackgroundCheckEmailSent
 		,CAST(COGRosterNote AS NVARCHAR(MAX)) AS COGRosterNote
@@ -101,5 +101,9 @@ UNPIVOT
 		,Staff
 		,Age
 		,CGLeaderStatus
+		, BackgroundCheckDate
+		, BGCheckHold
+		, BGCheckHoldReason
+		, BackgroundCheckNote
 	)
 ) as U
