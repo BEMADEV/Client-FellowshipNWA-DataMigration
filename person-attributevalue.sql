@@ -22,15 +22,15 @@ FROM
 		,CONVERT(NVARCHAR(MAX), DiscoveryDate, 101) AS DiscoveryDate
 		,CAST(DiscoveryNotes AS NVARCHAR(MAX)) AS DiscoveryNotes
 		,CAST(DiscoveryLocation AS NVARCHAR(MAX)) AS DiscoveryLocation
-		,CAST(IIF(DiscoveryTaken = 0, 'False', 'True') AS NVARCHAR(MAX)) AS DiscoveryTaken
+		,CAST(IIF(DiscoveryTaken = 1, 'True', 'False') AS NVARCHAR(MAX)) AS DiscoveryTaken
 		,CAST(PassportNumber AS NVARCHAR(MAX)) AS PassportNumber
 		,CAST(FullLegalName AS NVARCHAR(MAX)) AS FullLegalName
-		,CAST(IIF(ExcludeFromDuplicate = 0, N'False', N'True') AS NVARCHAR(MAX)) AS ExcludeFromDuplicate
+		,CAST(IIF(ExcludeFromDuplicate = 1, N'True', N'False') AS NVARCHAR(MAX)) AS ExcludeFromDuplicate
 		,CAST(CheckInNotes AS NVARCHAR(MAX)) AS CheckInNotes
 		,CAST(NumOrgs AS NVARCHAR(MAX)) AS NumOrgs
 		,CAST(IRegion AS NVARCHAR(MAX)) AS IRegion
 		,CAST(UniversalNotes AS NVARCHAR(MAX)) AS UniversalNotes
-		,CAST(IIF(Staff = 0, N'False', N'True') AS NVARCHAR(MAX)) AS Staff
+		,CAST(IIF(Staff = 1, N'True', N'False') AS NVARCHAR(MAX)) AS Staff
 		,CAST(Age AS NVARCHAR(MAX)) AS Age
 		,CAST(CGLeaderStatus AS NVARCHAR(MAX)) AS CGLeaderStatus
 		,CAST(CGCurrentLeader AS NVARCHAR(MAX)) AS CGCurrentLeader
