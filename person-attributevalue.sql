@@ -107,3 +107,93 @@ UNPIVOT
 		, BackgroundCheckNote
 	)
 ) as U
+
+UNION ALL
+
+SELECT 
+	IndId as PersonId
+	, 'GB_' + ColumnName as AttributeKey
+	, [Value]  as AttributeValue
+FROM
+(
+	SELECT
+		tbl.indId
+		,CAST(DirectLine AS NVARCHAR(MAX)) AS DirectLine
+		,CAST(Intercom AS NVARCHAR(MAX)) AS Intercom
+		,CAST(tbl.MinistryArea AS NVARCHAR(MAX)) AS MinistryArea
+		,CAST(HoursPerDay AS NVARCHAR(MAX)) AS HoursPerDay
+		,CAST(HoursPerWeek AS NVARCHAR(MAX)) AS HoursPerWeek
+		,CONVERT(NVARCHAR(MAX), tbl.DateOfHire, 101) AS DateOfHire
+		,CONVERT(NVARCHAR(MAX), AnniversaryDate, 101) AS AnniversaryDate
+		,CAST(ExemptStatus AS NVARCHAR(MAX)) AS ExemptStatus
+		,CONVERT(NVARCHAR(MAX), TermDate, 101) AS TermDate
+		,CAST(TermReason AS NVARCHAR(MAX)) AS TermReason
+		,CAST(TermSpcInstructions AS NVARCHAR(MAX)) AS TermSpcInstructions
+		,CAST(IIF(RehireEligible = 1, 'True', 'False') AS NVARCHAR(MAX)) AS RehireEligible
+		,CAST(PayrollCode AS NVARCHAR(MAX)) AS PayrollCode
+		,CAST(PayrollName AS NVARCHAR(MAX)) AS PayrollName
+		,CONVERT(NVARCHAR(MAX), PTOStartDate, 101) AS PTOStartDate
+		,CONVERT(NVARCHAR(MAX), SabbaticalStartDate, 101) AS SabbaticalStartDate
+		,CONVERT(NVARCHAR(MAX), BenefitsStartDate, 101) AS BenefitsStartDate
+		,CAST(PrimaryPositionName AS NVARCHAR(MAX)) AS PrimaryPositionName
+		,CAST(IDName AS NVARCHAR(MAX)) AS IDName
+		,CAST(SabbaticalClass AS NVARCHAR(MAX)) AS SabbaticalClass
+		,CAST(PTFTPosition AS NVARCHAR(MAX)) AS PTFTPosition
+		,CONVERT(NVARCHAR(MAX), SabbaticalLastTakenDate, 101) AS SabbaticalLastTakenDate
+		,CONVERT(NVARCHAR(MAX), SabbaticalNextEligibleDate, 101) AS SabbaticalNextEligibleDate
+		,CAST(SabbaticalNotes AS NVARCHAR(MAX)) AS SabbaticalNotes
+		,CAST(tbl.PositionType AS NVARCHAR(MAX)) AS PositionType
+		,CAST(WorkWeekDesc AS NVARCHAR(MAX)) AS WorkWeekDesc
+		,CAST(fu.SupervisorID AS NVARCHAR(MAX)) AS SupervisorID
+		,CAST(Congregation AS NVARCHAR(MAX)) AS Congregation
+		,CAST(position.Title AS NVARCHAR(MAX)) AS Title
+		,CAST(position.Workphone AS NVARCHAR(MAX)) AS Workphone
+		,CAST(IIF(position.ShowOnGlobal = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnGlobal
+		,CAST(IIF(position.ShowOnCongregation = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnCongregation
+	FROM tblEmp tbl
+		left join tblFamilyUsername fu on fu.IndID = tbl.IndID and fu.Staff = 1
+	outer apply (select top(1) epp.ShowOnCongregation, ShowOnGlobal,  epp.Congregation, epp.MinistryArea, epp.Title, epp.Phone as [Workphone] from tblEmpPublicPosition epp 
+		where epp.IndID = tbl.IndID and epp.inactive is null
+		order by epp.AddedDate desc 
+	) as position
+	where tbl.IndID is not null
+		and tbl.IndID not in (14168,47413)
+	
+) as S
+UNPIVOT
+(
+	Value for ColumnName IN (	
+	DirectLine
+	, Intercom
+	, MinistryArea
+	, HoursPerDay
+	, HoursPerWeek
+	, DateOfHire
+	, AnniversaryDate
+	, ExemptStatus
+	, TermDate
+	, TermReason
+	, TermSpcInstructions
+	, RehireEligible
+	, PayrollCode
+	, PayrollName
+	, PTOStartDate
+	, SabbaticalStartDate
+	, BenefitsStartDate
+	, PrimaryPositionName
+	, IDName
+	, SabbaticalClass
+	, PTFTPosition
+	, SabbaticalLastTakenDate
+	, SabbaticalNextEligibleDate
+	, SabbaticalNotes
+	, PositionType
+	, WorkWeekDesc
+	, SupervisorID
+	, Congregation
+	, Title
+	, Workphone
+	, ShowOnGlobal
+	, ShowOnCongregation
+	)
+) as U
