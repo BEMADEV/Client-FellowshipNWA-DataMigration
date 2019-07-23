@@ -1,7 +1,7 @@
 -- Still need to add Created By
 SELECT 
 	ContactId as Id
-	, ContactType as NoteType
+	, IIF(isNull(ContactType,'')='','No Type',ContactType) as NoteType
 	, isNull(Subject,'') as Caption
 	, IIF(ISNULL(Notes,'')='','(No Text)',Notes) as Text
 	, 'False' as IsAlert

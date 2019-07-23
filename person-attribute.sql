@@ -35,18 +35,19 @@ WHERE TABLE_NAME = 'tblIndividual'
 		,'NumOrgs'
 		,'IRegion'
 		,'UniversalNotes'
-		,'Staff'
 		,'Age'
 		,'CGLeaderStatus'
 		, 'BackgroundCheckDate'
 		, 'BGCheckHold'
 		, 'BGCheckHoldReason'
 		, 'BackgroundCheckNote'
+		, 'AddedBy'
+		, 'AddedDate'
 	)
 
-UNION ALL
+UNION
 
-SELECT
+SELECT Distinct
 	 'GB_' + [Column_Name] as [Key]
 	 ,[COLUMN_NAME] as [Name]
 	 , CASE Data_Type
@@ -94,4 +95,7 @@ or TABLE_NAME = 'tblEmpPublicPosition'
 	, 'Workphone'
 	, 'ShowOnGlobal'
 	, 'ShowOnCongregation'
+	, 'Staff'
 	)
+
+	Order By [Key]

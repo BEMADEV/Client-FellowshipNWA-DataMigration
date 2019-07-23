@@ -8,9 +8,10 @@ SELECT
 		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
 		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'tblContributions'
+WHERE TABLE_NAME = 'lkDesignations'
 	AND [Column_Name] In (
-	'DirectDebitId'
-	, 'Coin'
-	, 'Paper'
+	'SubAcctNum'
+	, 'ChildCareStatement'
+	, 'OneTimeGift'
+	, 'SolomonAcctNum'
 	)

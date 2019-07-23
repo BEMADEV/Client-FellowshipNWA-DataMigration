@@ -16,7 +16,7 @@ INSERT INTO Attribute(
 		, EntityTypeQualifierColumn
 		, EntityTypeQualifierValue
 		, ForeignKey )
-		
+
 Select 
 	a.[Key] as [Key]
 	, a.[Name] as [Name]
@@ -31,11 +31,11 @@ Select
 	, 0 as IsAnalytic
 	, 0 as IsAnalyicHistory
 	, 0 as IsGridColumn
-	, 84 as EntityTypeId
+	, 76 as EntityTypeId
 	, '' as EntityTypeQualifierColumn
 	, '' as EntityTypeQualifierValue
 	, 'GB' as ForeignKey
-From [_tmp_financialtransaction-attribute] a
+From [_tmp_financialaccount-attribute] a
 Join FieldType ft on a.FieldType = ft.[Class]
 LEFT Join Attribute ra on a.[Key] = ra.[key] and ra.foreignKey = 'GB'
 Where RA.Id is null
@@ -52,9 +52,9 @@ SELECT
 	, a.Id as AttributeId
 	, t.Id as EntityId
 	, 'GB' as ForeignKey
-	, tt.AttributeValue as [Value]
+	, tt.[AttributeValue] as [Value]
 	, NEWID() as [Guid]
 From 
-	[_tmp_financialtransaction-attributevalue] tt
-Join FinancialTransaction t on t.ForeignId = tt.Transactionid
+	[_tmp_financialaccount-attributevalue] tt
+Join FinancialAccount t on t.ForeignId = tt.accountId
 Join Attribute a on a.[key] = tt.AttributeKey

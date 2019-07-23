@@ -31,4 +31,3 @@ INSERT INTO azdev.rockdb2.dbo.AttributeValue
 	from lkDesignations s
 	join azdev.rockdb2.dbo.FinancialAccount t on s.ID = t.ForeignID
 	WHERE s.ChildCareStatement is not null
-	and s.ID = 449

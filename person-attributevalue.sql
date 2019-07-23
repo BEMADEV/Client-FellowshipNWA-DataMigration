@@ -30,7 +30,6 @@ FROM
 		,CAST(NumOrgs AS NVARCHAR(MAX)) AS NumOrgs
 		,CAST(IRegion AS NVARCHAR(MAX)) AS IRegion
 		,CAST(UniversalNotes AS NVARCHAR(MAX)) AS UniversalNotes
-		,CAST(IIF(Staff = 1, N'True', N'False') AS NVARCHAR(MAX)) AS Staff
 		,CAST(Age AS NVARCHAR(MAX)) AS Age
 		,CAST(CGLeaderStatus AS NVARCHAR(MAX)) AS CGLeaderStatus
 		,CAST(CGCurrentLeader AS NVARCHAR(MAX)) AS CGCurrentLeader
@@ -69,6 +68,8 @@ FROM
 		,CAST(Prefix AS NVARCHAR(MAX)) AS Prefix
 		,CAST(CustomerProfileID AS NVARCHAR(MAX)) AS CustomerProfileID
 		,CAST(MaidenName AS NVARCHAR(MAX)) AS MaidenName
+		,CAST(AddedBy AS NVARCHAR(MAX)) as AddedBy
+		,CONVERT(NVARCHAR(MAX), AddedDate, 101) as AddedDate
 	FROM tblIndividual
 ) as S
 UNPIVOT
@@ -98,13 +99,14 @@ UNPIVOT
 		,NumOrgs
 		,IRegion
 		,UniversalNotes
-		,Staff
 		,Age
 		,CGLeaderStatus
 		, BackgroundCheckDate
 		, BGCheckHold
 		, BGCheckHoldReason
 		, BackgroundCheckNote
+		, AddedBy
+		, AddedDate
 	)
 ) as U
 
@@ -150,6 +152,7 @@ FROM
 		,CAST(position.Workphone AS NVARCHAR(MAX)) AS Workphone
 		,CAST(IIF(position.ShowOnGlobal = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnGlobal
 		,CAST(IIF(position.ShowOnCongregation = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnCongregation
+		,CAST('True' as NVARCHAR(MAX)) AS Staff
 	FROM tblEmp tbl
 		left join tblFamilyUsername fu on fu.IndID = tbl.IndID and fu.Staff = 1
 	outer apply (select top(1) epp.ShowOnCongregation, ShowOnGlobal,  epp.Congregation, epp.MinistryArea, epp.Title, epp.Phone as [Workphone] from tblEmpPublicPosition epp 
@@ -195,5 +198,6 @@ UNPIVOT
 	, Workphone
 	, ShowOnGlobal
 	, ShowOnCongregation
+	, Staff
 	)
 ) as U

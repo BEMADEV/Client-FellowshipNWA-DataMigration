@@ -1,4 +1,4 @@
 Update g
-Set IsActive = IIF(tg.IsActive = 'True', 1, 0)
+Set IsActive = tg.IsActive
 From _tmp_group tg
 Join [Group] g on g.foreignId = tg.Id

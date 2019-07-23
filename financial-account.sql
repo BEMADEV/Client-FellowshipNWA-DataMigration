@@ -6,6 +6,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -16,6 +18,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -26,6 +30,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -36,6 +42,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -46,6 +54,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -56,6 +66,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -77,4 +89,6 @@ SELECT
 		WHEN 'TGI' THEN '990012'
 		ELSE '990006'
 		END as ParentAccountId
+	, IIF( inactive = 1, 0, 1 ) as IsActive
+	, IIF( DisplayOnWeb = 1, 1, 0 ) as IsPublic
 FROM lkDesignations
