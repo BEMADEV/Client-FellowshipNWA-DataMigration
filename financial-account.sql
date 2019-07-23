@@ -81,12 +81,11 @@ SELECT
 	   END as IsTaxDeductible
 	, '' as CampusId
 	, CASE FundGroup
-		WHEN 'Celebrate Recovery' THEN '990007'
-		WHEN 'Fayetteville' THEN '990008'
-		WHEN 'Mosaic' THEN '990009'
-		WHEN 'Release' THEN '990010'
-		WHEN 'Sunday' THEN '990011'
-		WHEN 'TGI' THEN '990012'
+		WHEN 'Activity Fund' THEN '990001'
+		WHEN 'Building Fund' THEN '990002'
+		WHEN 'General Fund' THEN '990003'
+		WHEN 'Mission Fund' THEN '990004'
+		WHEN 'Other Fund' THEN '990005'
 		ELSE '990006'
 		END as ParentAccountId
 	, IIF( inactive = 1, 0, 1 ) as IsActive
