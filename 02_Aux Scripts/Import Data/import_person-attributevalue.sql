@@ -7,8 +7,8 @@ Select
 	, g.Id as EntityId
 	, tav.AttributeValue as [Value]
 	, NEWID() as [Guid]
-From [_tmp_group-attributevalue] tav
+From [_tmp_person-attributevalues] tav
 Join Attribute a on a.[Key] = tav.AttributeKey
-Join [Group] g on g.ForeignId = tav.Groupid and g.ForeignKey = @ForeignKey and GroupTypeId != 10
+Join person g on g.ForeignId = tav.personId and g.ForeignKey = @ForeignKey
 Left Join AttributeValue v on v.EntityId = g.id and v.AttributeId = a.Id
-Where v.id is null
+Where v.id is null and tav.AttributeValue is not null
