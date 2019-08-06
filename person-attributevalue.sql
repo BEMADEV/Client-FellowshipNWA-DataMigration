@@ -152,7 +152,7 @@ FROM
 		,CAST(position.Workphone AS NVARCHAR(MAX)) AS Workphone
 		,CAST(IIF(position.ShowOnGlobal = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnGlobal
 		,CAST(IIF(position.ShowOnCongregation = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnCongregation
-		,CAST('True' as NVARCHAR(MAX)) AS Staff
+		,CAST(IIF(fu.Staff = 1, 'True', 'False') AS NVARCHAR(MAX)) AS Staff
 	FROM tblEmp tbl
 		left join tblFamilyUsername fu on fu.IndID = tbl.IndID and fu.Staff = 1
 	outer apply (select top(1) epp.ShowOnCongregation, ShowOnGlobal,  epp.Congregation, epp.MinistryArea, epp.Title, epp.Phone as [Workphone] from tblEmpPublicPosition epp 
