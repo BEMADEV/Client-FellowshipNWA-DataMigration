@@ -15,6 +15,8 @@ Select
 	, NEWID()
 From _tmp_location tl
 Join DefinedValue dv on dv.Value = 'Meeting Location' and dv.DefinedTypeId = 15
+Left Join [Location] l on l.ForeignId = tl.Id
+Where l.Id is null
 
 
 Update l
