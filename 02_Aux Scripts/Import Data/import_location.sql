@@ -3,13 +3,13 @@ Select
 	tl.[Name]
 	, dv.Id as LocationTypeId
 	, tl.isActive
-	, Street1
-	, Street2
-	, City
-	, [State]
-	, [Country]
-	, [PostalCode]
-	, [County]
+	, tl.Street1
+	, tl.Street2
+	, tl.City
+	, tl.[State]
+	, tl.[Country]
+	, tl.[PostalCode]
+	, tl.[County]
 	, tl.Id as ForiegnId
 	, 'GB' as ForeignKey
 	, NEWID()
@@ -17,7 +17,6 @@ From _tmp_location tl
 Join DefinedValue dv on dv.Value = 'Meeting Location' and dv.DefinedTypeId = 15
 Left Join [Location] l on l.ForeignId = tl.Id
 Where l.Id is null
-
 
 Update l
 Set ParentLocationId = pl.Id
