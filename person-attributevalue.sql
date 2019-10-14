@@ -70,6 +70,8 @@ FROM
 		,CAST(MaidenName AS NVARCHAR(MAX)) AS MaidenName
 		,CAST(AddedBy AS NVARCHAR(MAX)) as AddedBy
 		,CONVERT(NVARCHAR(MAX), AddedDate, 101) as AddedDate
+		,CAST(ModBy AS NVARCHAR(MAX)) as ModBy
+		,CONVERT(NVARCHAR(MAX), ModDate, 101) as ModDate
 	FROM tblIndividual
 ) as S
 UNPIVOT
@@ -107,6 +109,8 @@ UNPIVOT
 		, BackgroundCheckNote
 		, AddedBy
 		, AddedDate
+		, ModBy
+		, ModDate
 	)
 ) as U
 

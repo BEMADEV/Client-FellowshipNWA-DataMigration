@@ -43,6 +43,8 @@ WHERE TABLE_NAME = 'tblIndividual'
 		, 'BackgroundCheckNote'
 		, 'AddedBy'
 		, 'AddedDate'
+		, 'ModBy'
+		, 'ModDate'
 	)
 
 UNION
