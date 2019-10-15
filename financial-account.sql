@@ -111,7 +111,7 @@ UNION ALL
 SELECT
 	-- Other Fund
 	990012 as Id
-	, 'Other' as [Name]
+	, 'No Fund' as [Name]
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
