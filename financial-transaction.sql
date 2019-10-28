@@ -9,9 +9,11 @@ SELECT
 	, format(ContDate, 'yyyyMMdd') as BatchId
 	, isNull(Cast(indId as nvarchar(max)), '') as AuthorizedPersonId
 	, contDate as TransactionDate
-	, CASE d.ACHgroup
-		WHEN 'Giving' then 'Contribution'
-		ELSE 'EventRegistration'
+	, CASE d.fundtype
+		WHEN 'Camp/Retreat' THEN 'EventRegistration'
+		WHEN 'Curriculum' THEN 'EventRegistration'
+		WHEN 'Service' THEN 'EventRegistration'
+		ELSE 'Giving'
 	  END as TransactionType
 	, IsNull(Check#,'') as TransactionCode
 	, IsNull(ContNotes,'') as Summary
