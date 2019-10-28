@@ -2,7 +2,7 @@ SELECT
 	ContribID# as Id
 	, ContribID# as TransactionId
 	,  d.ID as AccountId
-	, Amount
+	, Round(Amount, 2) as Amount
 	, isNull(PaymentType, '') as Summary
 	, c.addedDate as CreatedDateTime
 	, isnull(convert(nvarchar(max), c.ModDate, 101), '') as ModifiedDateTime
@@ -11,3 +11,4 @@ SELECT
 FROM tblContributions c
 Join lkDesignations d on c.Designation = d.Designations
 Where c.Amount is not null
+and c.ContribID# = 1166345
