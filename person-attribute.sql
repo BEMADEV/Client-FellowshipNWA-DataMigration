@@ -99,6 +99,8 @@ or TABLE_NAME = 'tblEmpPublicPosition'
 	, 'ShowOnGlobal'
 	, 'ShowOnCongregation'
 	, 'Staff'
+	, 'Phone'
+	, 'Congregation'
 	)
 
 	Order By [Key]

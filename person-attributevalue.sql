@@ -153,13 +153,13 @@ FROM
 		,CAST(fu.SupervisorID AS NVARCHAR(MAX)) AS SupervisorID
 		,CAST(Congregation AS NVARCHAR(MAX)) AS Congregation
 		,CAST(position.Title AS NVARCHAR(MAX)) AS Title
-		,CAST(position.Workphone AS NVARCHAR(MAX)) AS Workphone
+		,CAST(position.phone AS NVARCHAR(MAX)) AS phone
 		,CAST(IIF(position.ShowOnGlobal = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnGlobal
 		,CAST(IIF(position.ShowOnCongregation = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnCongregation
 		,CAST(IIF(fu.Staff = 1, 'True', 'False') AS NVARCHAR(MAX)) AS Staff
 	FROM tblEmp tbl
 		left join tblFamilyUsername fu on fu.IndID = tbl.IndID and fu.Staff = 1
-	outer apply (select top(1) epp.ShowOnCongregation, ShowOnGlobal,  epp.Congregation, epp.MinistryArea, epp.Title, epp.Phone as [Workphone] from tblEmpPublicPosition epp 
+	outer apply (select top(1) epp.ShowOnCongregation, ShowOnGlobal,  epp.Congregation, epp.MinistryArea, epp.Title, epp.Phone as [phone] from tblEmpPublicPosition epp 
 		where epp.IndID = tbl.IndID and epp.inactive is null
 		order by epp.AddedDate desc 
 	) as position
@@ -199,7 +199,7 @@ UNPIVOT
 	, SupervisorID
 	, Congregation
 	, Title
-	, Workphone
+	, phone
 	, ShowOnGlobal
 	, ShowOnCongregation
 	, Staff
