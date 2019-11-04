@@ -7,7 +7,7 @@ Select
 	, g.Id as EntityId
 	, tav.AttributeValue as [Value]
 	, NEWID() as [Guid]
-From [_tmp_person-attributevalues] tav
+From [_tmp_person-attributevalue] tav
 Join Attribute a on a.[Key] = tav.AttributeKey
 Join person g on g.ForeignId = tav.personId and g.ForeignKey = @ForeignKey
 Left Join AttributeValue v on v.EntityId = g.id and v.AttributeId = a.Id

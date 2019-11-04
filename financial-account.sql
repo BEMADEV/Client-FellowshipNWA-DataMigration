@@ -5,6 +5,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -15,6 +17,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -25,6 +29,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -35,6 +41,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -45,6 +53,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -55,6 +65,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -65,6 +77,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -75,6 +89,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -85,6 +101,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -95,6 +113,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -105,6 +125,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -115,6 +137,8 @@ SELECT
 	, 'FALSE' as IsTaxDeductible
 	, '' As CampusId
 	, '' as ParentAccountId
+	, 1 as IsActive
+	, 1 as IsPublic
 
 UNION ALL
 
@@ -142,4 +166,6 @@ SELECT
 		WHEN 'Service' THEN '990011'
 		ELSE '990012'
 		END as ParentAccountId
-FROM lkDesignations
+	, iif(k.Inactive=1,0,1) as IsActive
+	, IIF(k.DisplayOnWeb=1,1,0) as IsPublic
+FROM lkDesignations k
