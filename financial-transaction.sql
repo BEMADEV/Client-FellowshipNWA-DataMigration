@@ -13,7 +13,7 @@ SELECT
 		WHEN 'Camp/Retreat' THEN 'EventRegistration'
 		WHEN 'Curriculum' THEN 'EventRegistration'
 		WHEN 'Service' THEN 'EventRegistration'
-		ELSE 'Giving'
+		ELSE 'Contribution'
 	  END as TransactionType
 	, IsNull(Check#,'') as TransactionCode
 	, IsNull(ContNotes,'') as Summary
