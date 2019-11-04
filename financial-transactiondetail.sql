@@ -11,4 +11,3 @@ SELECT
 FROM tblContributions c
 Join lkDesignations d on c.Designation = d.Designations
 Where c.Amount is not null
-and c.ContribID# = 1166345
