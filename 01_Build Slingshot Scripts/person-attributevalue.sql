@@ -111,6 +111,7 @@ UNPIVOT
 		, AddedDate
 		, ModBy
 		, ModDate
+		, ConfirmationDate
 	)
 ) as U
 
