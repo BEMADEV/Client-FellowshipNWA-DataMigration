@@ -1,4 +1,4 @@
-SELECT
+SELECT Distinct
 	 'GB_' + [Column_Name] as [Key]
 	 ,[COLUMN_NAME] as [Name]
 	 , CASE Data_Type
@@ -103,4 +103,23 @@ or TABLE_NAME = 'tblEmpPublicPosition'
 	, 'Congregation'
 	)
 
-	Order By [Key]
+UNION 
+
+SELECT Distinct
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblFamilyUsername'
+	AND [Column_Name] In (
+		'LastAccessDate'
+		, 'AccountActive'
+	)
+
+Order By [Key]

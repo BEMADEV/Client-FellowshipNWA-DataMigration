@@ -1,11 +1,11 @@
-SELECT 
+SELECT Distinct
 	IndId as PersonId
 	, 'GB_' + ColumnName as AttributeKey
 	, [Value]  as AttributeValue
 FROM
 (
 	SELECT
-		indId
+		i.indId
 		,CAST(IDisplayName AS NVARCHAR(MAX)) AS IDisplayName
 		,CAST(FamilyRole AS NVARCHAR(MAX)) AS FamilyRole
 		,CAST(EmailAddressAlt AS NVARCHAR(MAX)) AS EmailAddressAlt
@@ -68,11 +68,14 @@ FROM
 		,CAST(Prefix AS NVARCHAR(MAX)) AS Prefix
 		,CAST(CustomerProfileID AS NVARCHAR(MAX)) AS CustomerProfileID
 		,CAST(MaidenName AS NVARCHAR(MAX)) AS MaidenName
-		,CAST(AddedBy AS NVARCHAR(MAX)) as AddedBy
-		,CONVERT(NVARCHAR(MAX), AddedDate, 101) as AddedDate
+		,CAST(i.AddedBy AS NVARCHAR(MAX)) as AddedBy
+		,CONVERT(NVARCHAR(MAX), i.AddedDate, 101) as AddedDate
 		,CAST(ModBy AS NVARCHAR(MAX)) as ModBy
 		,CONVERT(NVARCHAR(MAX), ModDate, 101) as ModDate
-	FROM tblIndividual
+		,Convert(nvarchar(max), fu.LastAccessDate) as LastAccessDate
+		,CAST(IIF(AccountActive = 1, N'True', N'False') AS NVARCHAR(MAX)) as AccountActive
+	FROM tblIndividual i
+	Join tblFamilyUsername fu on fu.IndID = i.IndID
 ) as S
 UNPIVOT
 (
@@ -112,6 +115,8 @@ UNPIVOT
 		, ModBy
 		, ModDate
 		, ConfirmationDate
+		, LastAccessDate
+		, AccountActive
 	)
 ) as U
 
@@ -165,7 +170,6 @@ FROM
 		order by epp.AddedDate desc 
 	) as position
 	where tbl.IndID is not null
-		and tbl.IndID not in (14168,47413)
 	
 ) as S
 UNPIVOT
@@ -206,3 +210,4 @@ UNPIVOT
 	, Staff
 	)
 ) as U
+
