@@ -11,21 +11,21 @@ Follow the below steps to complete the primary data migration.  To see what data
 
 1. Run all scripts in [01_Build Slingshot Scripts](/01_Build%20Slingshot%20Scripts/) against the appropriate Gacebase Database.
    - [attendance.sql](/01_Build%20Slingshot%20Scripts/attendance.sql)
-   - [finanical-account.sql]
-   - [financial-batch.sql]
-   - [financial-transcation.sql]
-   - [financial-transactiondetail.sql]
-   - [group-member.sql]
-   - [group.sql]
-   - [grouptype.sql]
-   - [location.sql]
-   - [person-address.sql]
-   - [person-attribute.sql]
-   - [person-attributevalue.sql]
-   - [person-notesql]
-   - [person-phone.sql]
-   - [person.sql]
-   - [schedule.sql]
+   - [finanical-account.sql](/01_Build%20Slingshot%20Scripts/finanical-account.sql)
+   - [financial-batch.sql](/01_Build%20Slingshot%20Scripts/financial-batch.sql)
+   - [financial-transcation.sql](/01_Build%20Slingshot%20Scripts/financial-transcation.sql)
+   - [financial-transactiondetail.sql](/01_Build%20Slingshot%20Scripts/financial-transactiondetail.sql)
+   - [group-member.sql](/01_Build%20Slingshot%20Scripts/group-member.sql)
+   - [group.sql](/01_Build%20Slingshot%20Scripts/group.sql)
+   - [grouptype.sql](/01_Build%20Slingshot%20Scripts/grouptype.sql)
+   - [location.sql](/01_Build%20Slingshot%20Scripts/location.sql)
+   - [person-address.sql](/01_Build%20Slingshot%20Scripts/person-address.sql)
+   - [person-attribute.sql](/01_Build%20Slingshot%20Scripts/person-attribute.sql)
+   - [person-attributevalue.sql](/01_Build%20Slingshot%20Scripts/person-attributevalue.sql)
+   - [person-notesql](/01_Build%20Slingshot%20Scripts/person-notesql.sql)
+   - [person-phone.sql](/01_Build%20Slingshot%20Scripts/person-phone.sql)
+   - [person.sql](/01_Build%20Slingshot%20Scripts/person.sql)
+   - [schedule.sql](/01_Build%20Slingshot%20Scripts/schedule.sql)
 2. Save the results of all queries as CSV Files using the slingshot naming conventions
 3. Place all CSV files into an .zip file, and modify the extension to .slingshot
 4. Run the Bulk Import tool in Rock using the Slingshot file.  Once to import data, and second time to import photos
@@ -58,6 +58,7 @@ Once the Slingshot import has completed.  Auxiliary scripts need to be run to ei
 3. Attach Select Slingshot Exports to the Rock DB.  This is because there are some bugs in the slingshot import, and scripts can be run to fix those bugs
    - group.csv > _tmp_group
    - financial-account.scv > _tmp_Financial-Account
+   - location.csv > _tmp_location
 4. Run all scripts under 02_Aux Scripts > 03_Update Scripts.
    - Fix Inactive Groups.sql:  This script properly marks groups as inactive.  This is a fix to a bug in Slingshot import tool.
    - Fix IsActive - IsPublic Accounts.sql:  This script will properly mark groups as IsPublic and IsAcive.  This is a fix to a bug in the Slingshot import tool.
