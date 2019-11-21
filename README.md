@@ -1,5 +1,5 @@
 # Client-FellowshipNWA-DataMigration
-Used for storing all the SQL scripts needed for Data migration.
+below outlines the data migration process form Gracebase to Rockrms for Fellowship NWA.
 
 ## 1.1 Preperation
 Because some work has already been done in production, with manually adding campuses, prior to slingshot running, production records need to updated with Foreign Keys and Ids so that the import properly matches records.  Currently, there is only script that needs to be run
