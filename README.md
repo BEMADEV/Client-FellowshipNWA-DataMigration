@@ -34,19 +34,19 @@ Follow the below steps to complete the primary data migration.  To see what data
 Once the Slingshot import has completed.  Auxiliary scripts need to be run to either import additional information not supported by slingshot, or to clean up data from the import.  Additional Data needs to export from Gracebase into temporary staging tables in Rock.  Then it can be imported and manipulated as needed.
 ( Note scripts appended with WIP are not be run.  These scripts are “Works In Progress” and have not been completed yet. )
 
-1. Run all scripts in 02_Aux Scripts > 01 _Create tmp import Tables using the import data wizard.  The Gracebase DB should be used as the source, and the Rock DB used as the Destination.  SSIS Packages can be created and used to streamline future imports.  ( Just make sure to update the source and destination Databases.  I started creating these and saving them under SSIS Packages.  If I can save all of these in the next mock import, I’ll use strictly SSIS packages instead of the manually running the scripts.  It’s the same result, just makes future imports faster. ).
-   - CommunicationListRecipients.sql:  This script gets all the recipients tied to the communication lists so that they can be added as group members in Rock.
-   - EmailLists.sql:  This script grabs all the communication lists to be created as groups with the group type of communication list in Rock.
-   - financialaccount-attribute.sql
-   - finanicalaccount-attributevalue.sql:  These two scripts add the SubAccNum, ChildCareStatement, OneTimeGift, and SolomonAcctNum columns from GB and add them as attributes to Rocks Finanical Accounts.
-   - financialtransaction-attribute.sql
-   - financialtransaction-attributevalue.sql:  These two scripts add the DerectDebitId, Coin, and Paper columns from Contributions to Rock's Finanical Transactions.
-   - group-attribute.sql
-   - group-attributevalue.sql:  These two scripst add Attributes to Rocks Groups based on GroupType from the tblOrganization table.  This includes: CoachShepard, OnlineService, OnlineSeason, OnlineRegion, OnlinePublic, OnlineSize, OnlineGender, CoachIndId, OnlineChildcare, OnlineNote, CGImage, CGStudy, MissionName, MisionDescDefault,MissionFund, MissionOnline,MissionFeeId, MissionImage,MissionGoal, MissionDescShort, etc
-   - groupmember-attribute.sql
-   - groupmember-attributevalue.sql:  These two scripts add Attributes to Rock Group Members based on custom fields from the lkCampFields table.
-   - knownrelationship.sql:  This script creates Rock Known Relationships from the tblIndividualRelationships table.
-   - supervisor_indId.sql:  This script gets the indiviuals Supervior's Id from the tblUserName table.  It returns the superviors IndId and the persons IndId which is used to set the attribute in Rock
+1. Run all scripts in [02_Aux Scripts > 01 _Create tmp import](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/) Tables using the import data wizard.  The Gracebase DB should be used as the source, and the Rock DB used as the Destination.  SSIS Packages can be created and used to streamline future imports.  ( Just make sure to update the source and destination Databases.  I started creating these and saving them under SSIS Packages.  If I can save all of these in the next mock import, I’ll use strictly SSIS packages instead of the manually running the scripts.  It’s the same result, just makes future imports faster. ).
+   - [CommunicationListRecipients.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/CommunicationListRecipients.sql):  This script gets all the recipients tied to the communication lists so that they can be added as group members in Rock.
+   - [EmailLists.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/EmailLists.sql):  This script grabs all the communication lists to be created as groups with the group type of communication list in Rock.
+   - [financialaccount-attribute.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/financialaccount-attribute.sql)
+   - [finanicalaccount-attributevalue.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/financialaccount-attributevalue.sql):  These two scripts add the SubAccNum, ChildCareStatement, OneTimeGift, and SolomonAcctNum columns from GB and add them as attributes to Rocks Finanical Accounts.
+   - [financialtransaction-attribute.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/financialtransaction-attribute.sql)
+   - [financialtransaction-attributevalue.sql(02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/financialtransaction-attributevalue.sql)]:  These two scripts add the DerectDebitId, Coin, and Paper columns from Contributions to Rock's Finanical Transactions.
+   - [group-attribute.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/group-attribute.sql)
+   - [group-attributevalue.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/group-attributevalue.sql):  These two scripst add Attributes to Rocks Groups based on GroupType from the tblOrganization table.  This includes: CoachShepard, OnlineService, OnlineSeason, OnlineRegion, OnlinePublic, OnlineSize, OnlineGender, CoachIndId, OnlineChildcare, OnlineNote, CGImage, CGStudy, MissionName, MisionDescDefault,MissionFund, MissionOnline,MissionFeeId, MissionImage,MissionGoal, MissionDescShort, etc
+   - [groupmember-attribute.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/groupmember-attribute.sql)
+   - [groupmember-attributevalue.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/groupmember-attributevalue.sql):  These two scripts add Attributes to Rock Group Members based on custom fields from the lkCampFields table.
+   - [knownrelationship.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/knownrelationship.sql):  This script creates Rock Known Relationships from the tblIndividualRelationships table.
+   - [supervisor_indId.sql](02_Aux%20Scripts/01_Create%20Tmp%20Import%20Tables/supervisor_indId.sql):  This script gets the indiviuals Supervior's Id from the tblUserName table.  It returns the superviors IndId and the persons IndId which is used to set the attribute in Rock
 2. Run all scripts under 02_Aux Scripts > 02_Import Data.
    - Import_Communication Lists and Recipeints.sql
    - Import_Financialaccount-attributes.sql
