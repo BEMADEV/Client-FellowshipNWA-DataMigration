@@ -4,28 +4,28 @@ Used for storing all the SQL scripts needed for Data migration.
 ## 1.1 Preperation
 Because some work has already been done in production, with manually adding campuses, prior to slingshot running, production records need to updated with Foreign Keys and Ids so that the import properly matches records.  Currently, there is only script that needs to be run
 
-1. Run 00_Update ForeignId on Campus.sql
+1. [Run 00_Update ForeignId on Campus.sql](/00_Update%20ForeignId%20on%20Campus.sql)
 
 ## 1.2 Slingshot
 Follow the below steps to complete the primary data migration.  To see what data is supported under Slingshot, you can view the following Documentation under the Rock Repository.
 
-1. Run all scripts in 01_Build Slingshot Scripts against the appropriate Gacebase Database.
-   - attendance.sql
-   - finanical-account.sql
-   - financial-batch.sql
-   - financial-transcation.sql
-   - financial-transactiondetail.sql
-   - group-member.sql
-   - group.sql
-   - grouptype.sql
-   - location.sql
-   - person-address.sql
-   - person-attribute.sql
-   - person-attributevalue.sql
-   - person-notesql
-   - person-phone.sql
-   - person.sql
-   - schedule.sql
+1. Run all scripts in [01_Build Slingshot Scripts](/01_Build%20Slingshot%20Scripts/) against the appropriate Gacebase Database.
+   - [attendance.sql](/01_Build%20Slingshot%20Scripts/attendance.sql)
+   - [finanical-account.sql]
+   - [financial-batch.sql]
+   - [financial-transcation.sql]
+   - [financial-transactiondetail.sql]
+   - [group-member.sql]
+   - [group.sql]
+   - [grouptype.sql]
+   - [location.sql]
+   - [person-address.sql]
+   - [person-attribute.sql]
+   - [person-attributevalue.sql]
+   - [person-notesql]
+   - [person-phone.sql]
+   - [person.sql]
+   - [schedule.sql]
 2. Save the results of all queries as CSV Files using the slingshot naming conventions
 3. Place all CSV files into an .zip file, and modify the extension to .slingshot
 4. Run the Bulk Import tool in Rock using the Slingshot file.  Once to import data, and second time to import photos
