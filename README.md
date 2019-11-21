@@ -7,7 +7,7 @@ Because some work has already been done in production, with manually adding camp
 1. [Run 00_Update ForeignId on Campus.sql](/00_Update%20ForeignId%20on%20Campus.sql)
 
 ## 1.2 Slingshot
-Follow the below steps to complete the primary data migration.  To see what data is supported under Slingshot, you can view the following Documentation under the Rock Repository.
+Follow the below steps to complete the primary data migration.  To see what data is supported under Slingshot, you can view the following Documentation under the [Rock Repository](https://github.com/SparkDevNetwork/Rock/blob/develop/Documentation/slingshot-file-format.md).
 
 1. Run all scripts in [01_Build Slingshot Scripts](/01_Build%20Slingshot%20Scripts/) against the appropriate Gacebase Database.
    - [attendance.sql](/01_Build%20Slingshot%20Scripts/attendance.sql)
