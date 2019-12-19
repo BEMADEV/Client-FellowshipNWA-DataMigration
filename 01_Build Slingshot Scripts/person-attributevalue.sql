@@ -159,7 +159,7 @@ FROM
 		,CAST(fu.SupervisorID AS NVARCHAR(MAX)) AS SupervisorID
 		,CAST(Congregation AS NVARCHAR(MAX)) AS Congregation
 		,CAST(position.Title AS NVARCHAR(MAX)) AS Title
-		,CAST(position.phone AS NVARCHAR(MAX)) AS phone
+		,CAST(position.Phone AS NVARCHAR(MAX)) AS Phone
 		,CAST(IIF(position.ShowOnGlobal = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnGlobal
 		,CAST(IIF(position.ShowOnCongregation = 1, 'True', 'False') AS NVARCHAR(MAX)) AS ShowOnCongregation
 		,CAST(IIF(fu.Staff = 1, 'True', 'False') AS NVARCHAR(MAX)) AS Staff
@@ -204,7 +204,7 @@ UNPIVOT
 	, SupervisorID
 	, Congregation
 	, Title
-	, phone
+	, Phone
 	, ShowOnGlobal
 	, ShowOnCongregation
 	, Staff
