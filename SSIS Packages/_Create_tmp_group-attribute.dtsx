@@ -1,0 +1,652 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/31/2019 3:12:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-DDVB4D1IEQT"
+  DTS:CreatorName="WIN-DDVB4D1IEQT\Administrator"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{A1FCCAC1-21C8-417B-80B2-C5537D03F348}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="_Create_tmp_group-attribute"
+  DTS:VersionGUID="{DF6B1193-6868-4899-B42E-53464504961F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{51059D2C-5EB1-4146-A437-D146AF1F0F1B}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=rockdb_Conversion_3;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADENpyRzKtyebEs0dDTKzUrJtC8AmYAqqecPKW65njx/AAAAAAOgAAAAAIAACAAAAAqkkIhbZMinskUvxT7WDiFvhfTeCCz43j6jDsd7FC9BiAAAACudj8J9GXtrpBAiqfvNCybxEYQhzV07caNlBSAa0Q4RUAAAACj1a63pc10vaIpr8udrOkLxzcbi++/F43wkhMn7zH8CV7E5hgXqKfmp7CsjMY+kodR7NjQiodG9+984K9+M56g</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F3DC09DC-BC4F-41B9-8CEF-4A0E19F7CEAD}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=FBCWEBX\FBCSQLWEBX;User ID=sa;Initial Catalog=GBRestore3;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABbwMyqTVVvlvQkbw5GVT35wSsPjebK9k6/wo8bY/aU6QAAAAAOgAAAAAIAACAAAACY3/U0X776X9YRUitxu5vwnI+P/UnmIbWTM9EzAz5t6SAAAABCBlsiMGWo8JNfJSt7ejOb79nI9vF8FycZ4lZTSgOAZ0AAAADb9LI15Bog0PBY+pb6qUggYWxGr421z2yrEsThQ/E0uODFDW8FkSbkP8ILBBjmSbO75WirIDqSb8H+JjRHF9Bz</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{E26EBC84-A2FC-4FB4-8778-5F4D48A3FB94}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - _tmp_group-attribute"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[_tmp_group-attribute]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].Columns[Key]"
+                      cachedDataType="wstr"
+                      cachedLength="131"
+                      cachedName="Key"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[Key]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Key]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].Columns[FieldType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="34"
+                      cachedName="FieldType"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[FieldType]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[FieldType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].Columns[Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].Columns[GroupTypeId]"
+                      cachedDataType="i4"
+                      cachedName="GroupTypeId"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[GroupTypeId]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[GroupTypeId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[Key]"
+                      dataType="wstr"
+                      length="131"
+                      name="Key"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="128"
+                      name="Name"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[FieldType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="34"
+                      name="FieldType"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Category"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input].ExternalColumns[GroupTypeId]"
+                      dataType="i4"
+                      name="GroupTypeId"
+                      scale="255" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+	, 1 as GroupTypeId
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblOrganization'
+	AND [Column_Name] In (
+	'CoachShepard'
+	, 'OnlineService'
+	, 'OnlineSeason'
+	, 'OnlineRegion'
+	, 'OnlinePublic'
+	, 'OnlineSize'
+	, 'OnlineGender'
+	, 'CoachIndID'
+	, 'OnlineChildcare'
+	, 'OnlineNote'
+	, 'CGImage'
+	, 'CGStudy'
+	)
+
+
+UNION ALL
+
+SELECT
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+	, 3 as GroupTypeId
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblOrganization'
+	AND [Column_Name] In (
+		  'MissionName'
+		, 'MissionDescDefault'
+		, 'MissionFund'
+		, 'MissionOnline'
+		, 'MissionFeeID'
+		, 'MissionImage'
+		, 'MissionGoal'
+		, 'MissionDescShort'
+	)
+
+UNION ALL
+
+SELECT
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+	, 6 as GroupTypeId
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblOrganization'
+	AND [Column_Name] In (
+		'VolCOGService'
+		,'VolCOGAgeGroup'
+		,'VolStartDate'
+		,'VolEndDate'
+		,'VolCoordinator'
+		,'VolAutoRemindersOff'
+		,'SendReminderNumDays'
+		,'EmailReminder'
+		,'TextReminder'
+		,'VolDescription'
+		,'VolImage'
+		,'VolContactName'
+		,'VolContactNumber'
+		,'VolContactEmail'
+		,'VolThankYouMessage'
+		,'VolCOGServiceID'
+		,'VolCOGServiceShortcode'
+		,'VolCOGDayWeek'
+		,'VolCOGStartTime'
+		,'VolCOGEndTime'
+		,'VolCOGAgeGroupID'
+		,'VolFrequency'
+		,'VolAutoAssignment'
+		,'OtherRolesBreakdown'
+		,'VolCOGWeekOfMonth'
+		,'VolBackgroundCheck'
+	)
+
+UNION ALL
+
+SELECT
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+	, 7 as GroupTypeId
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblOrganization'
+	AND [Column_Name] In (
+	 'COGServiceName'
+	,'COGGroupName'
+	,'COGGradeStart'
+	,'COGGradeEnd'
+	,'COGGender'
+	,'COGPickupRm'
+	,'COGCheckinRm'
+	,'COGRegion'
+	,'COGRegisteredOnly'
+	,'COGRoomName'
+	,'COGDOBStart'
+	,'COGDOBEnd'
+	,'COGOverflowRoom1'
+	,'COGOverflowRoom2'
+	,'COGCapacity'
+	,'COGReceiptLabel'
+	,'COGNameTagLabel'
+	,'COGSetupStartDate'
+	,'COGSetupEndDate'
+	,'COGAgeGroup'
+	,'COGCampus'
+	,'COGMultiService'
+	,'COGDoNotPrintLabel'
+	)
+
+	UNION ALL
+
+SELECT
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+	, 4 as GroupTypeId
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblOrganization'
+	AND [Column_Name] In (
+		'ClassType'
+		,'TrainingClass'
+		,'TrainingClassName'
+	)
+
+	UNION ALL
+
+SELECT
+	 'GB_' + [Column_Name] as [Key]
+	 ,[COLUMN_NAME] as [Name]
+	 , CASE Data_Type
+		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
+		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
+		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
+		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
+	, 'Grace Base' As Category
+	, 5 as GroupTypeId
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'tblOrganization'
+	AND [Column_Name] In (
+		'ChildcareType'
+	)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - Query.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Key]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Key]"
+                      length="131"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Key]"
+                      name="Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="128"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[FieldType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[FieldType]"
+                      length="34"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[FieldType]"
+                      name="FieldType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[GroupTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[GroupTypeId]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[GroupTypeId]"
+                      name="GroupTypeId"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Key]"
+                      dataType="wstr"
+                      length="131"
+                      name="Key" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="128"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[FieldType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="34"
+                      name="FieldType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[GroupTypeId]"
+                      dataType="i4"
+                      name="GroupTypeId" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Key]"
+                      dataType="wstr"
+                      length="131"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Key]"
+                      name="Key" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[FieldType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="34"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[FieldType]"
+                      name="FieldType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[GroupTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[GroupTypeId]"
+                      name="GroupTypeId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Destination - _tmp_group-attribute.Inputs[Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{FB650371-3EF5-405D-B252-D89C8B298DD3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{51059D2C-5EB1-4146-A437-D146AF1F0F1B}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[_tmp_group-attribute] (&#xA;[Key] nvarchar(131),&#xA;[Name] nvarchar(128),&#xA;[FieldType] varchar(34) NOT NULL,&#xA;[Category] varchar(10) NOT NULL,&#xA;[GroupTypeId] int NOT NULL&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{B1044092-B003-4A69-A0A8-36B07421585E\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{B1044092-B003-4A69-A0A8-36B07421585E}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{B1044092-B003-4A69-A0A8-36B07421585E}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
