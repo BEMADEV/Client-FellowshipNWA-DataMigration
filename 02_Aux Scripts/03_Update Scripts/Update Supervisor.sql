@@ -60,7 +60,7 @@ BEGIN
 		, pa.[Guid] as [Value]
 		, NEWID() as [Guid]
 	From AttributeValue av
-	Join _tmp_SupervisorId_IndId k on k.SupervisorId = av.Value
+	Join _tmp_supervisor_indId k on k.SupervisorId = av.Value
 	Join Person p on p.ForeignId = k.IndId and p.ForeignKey = 'GB'
 	Join PersonAlias pa on pa.PersonId = p.Id and pa.AliasPersonId = p.Id
 	Left Join AttributeValue av2 on av2.EntityId = av.EntityId and av2.AttributeId = @AttributeId
