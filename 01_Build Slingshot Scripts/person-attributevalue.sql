@@ -74,6 +74,9 @@ FROM
 		,CONVERT(NVARCHAR(MAX), ModDate, 101) as ModDate
 		,Convert(nvarchar(max), fu.LastAccessDate) as LastAccessDate
 		,CAST(IIF(AccountActive = 1, N'True', N'False') AS NVARCHAR(MAX)) as AccountActive
+		, CONVERT(NVARCHAR(MAX), i.ScreeningFormDate, 101) as ScreeningFormDate
+		, CONVERT(NVARCHAR(MAX), i.ReferenceCheckDate, 101) as ReferenceCheckDate
+		, CAST(ReferenceCheckBy AS NVARCHAR(MAX)) AS ReferenceCheckBy
 	FROM tblIndividual i
 	Join tblFamilyUsername fu on fu.IndID = i.IndID
 ) as S
@@ -117,6 +120,9 @@ UNPIVOT
 		, ConfirmationDate
 		, LastAccessDate
 		, AccountActive
+		, ScreeningFormDate
+		, ReferenceCheckDate
+		, ReferenceCheckBy
 	)
 ) as U
 

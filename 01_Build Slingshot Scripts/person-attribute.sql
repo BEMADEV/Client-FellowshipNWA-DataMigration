@@ -46,6 +46,9 @@ WHERE TABLE_NAME = 'tblIndividual'
 		, 'ModBy'
 		, 'ModDate'
 		, 'ConfirmationDate'
+		, 'ScreeningFormDate'
+		, 'ReferenceCheckDate'
+		, 'ReferenceCheckBy'
 	)
 
 UNION
