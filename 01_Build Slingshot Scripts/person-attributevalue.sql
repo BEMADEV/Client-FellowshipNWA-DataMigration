@@ -74,9 +74,6 @@ FROM
 		,CONVERT(NVARCHAR(MAX), ModDate, 101) as ModDate
 		,Convert(nvarchar(max), fu.LastAccessDate) as LastAccessDate
 		,CAST(IIF(AccountActive = 1, N'True', N'False') AS NVARCHAR(MAX)) as AccountActive
-		, CONVERT(NVARCHAR(MAX), i.ScreeningFormDate, 101) as ScreeningFormDate
-		, CONVERT(NVARCHAR(MAX), i.ReferenceCheckDate, 101) as ReferenceCheckDate
-		, CAST(ReferenceCheckBy AS NVARCHAR(MAX)) AS ReferenceCheckBy
 	FROM tblIndividual i
 	Join tblFamilyUsername fu on fu.IndID = i.IndID
 ) as S
@@ -125,6 +122,8 @@ UNPIVOT
 		, ReferenceCheckBy
 	)
 ) as U
+
+Where [Value] != ''
 
 UNION ALL
 
@@ -217,3 +216,39 @@ UNPIVOT
 	)
 ) as U
 
+Where [Value] != ''
+
+UNION ALL
+
+SELECT 
+	IndId as PersonId
+	, 'GB_' + ColumnName as AttributeKey
+	, [Value]  as AttributeValue
+FROM
+(
+	SELECT
+		tbl.indId
+		,CAST(KeyBuilding AS NVARCHAR(MAX)) AS KeyBuilding
+		,CAST(KeyAcctCode AS NVARCHAR(MAX)) AS KeyAcctCode
+		,CAST(KeyCode AS NVARCHAR(MAX)) AS KeyCode
+		,CONVERT(NVARCHAR(MAX), DateIssued, 101) AS DateIssued
+		,CONVERT(NVARCHAR(MAX), DateReturned, 101) AS DateReturned
+		,CAST(IIF(Lost = 1, 'True', 'False') AS NVARCHAR(MAX)) AS Lost
+	FROM tblEmpIssuedKeys tbl
+	
+	where tbl.IndID is not null
+	
+) as S
+UNPIVOT
+(
+	Value for ColumnName IN (	
+	KeyBuilding
+	, KeyAcctCode
+	, KeyCode
+	, DateIssued
+	, DateReturned
+	, Lost
+	)
+) as U
+
+Where [Value] != ''
