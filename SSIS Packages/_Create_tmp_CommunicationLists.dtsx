@@ -1,40 +1,40 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/31/2019 2:18:15 PM"
+  DTS:CreationDate="1/30/2020 4:29:23 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="WIN-DDVB4D1IEQT"
   DTS:CreatorName="WIN-DDVB4D1IEQT\Administrator"
   DTS:Description="SSIS Package Description"
-  DTS:DTSID="{6281E2B3-D4F0-447C-B017-E485A0AF0C97}"
+  DTS:DTSID="{35C3F705-978E-44A2-B962-5F1277EF3DA4}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3026.27"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
-  DTS:ObjectName="_Create_tmp_Financialaccount-attribute"
-  DTS:VersionGUID="{57DFC007-46BF-4976-AA21-7289F57F99B9}">
+  DTS:ObjectName="_Create_tmp_CommunicationLists"
+  DTS:VersionGUID="{B3969AC8-8C73-4E8D-A40C-105E11009D6F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{669350E7-54BF-45D7-8BA2-1DA81DA52E66}"
+      DTS:DTSID="{BE04A6BC-1501-4F16-BB52-C102196F2921}"
       DTS:ObjectName="DestinationConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=Rockdb_Conversion_4;Provider=SQLNCLI11;Auto Translate=false;">
+          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=rockdb_Conversion_4;Provider=SQLNCLI11;Auto Translate=false;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADmByO9qpjtWR+lNaWvgM3i9JAKELk5V8gdC63ZJHEPOAAAAAAOgAAAAAIAACAAAAD4qEkStyvjVYfvfhNOu/26p7Dfm2GyNlOOqVZxKVddzSAAAACS+3hFNi5UeSMFKUZpWA6diZJrBUKcCb5l0nC5BinzMkAAAABewHEVab6PNXJTgaBJ2wuoZLOzoyHN3gMd0LIylKzsO2hcukT1pVIKNCxjRKebTuuL5ocsvdAmWr1MX+QdCOqA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB1J5SbokKZnbm+aTthvM8MBFNuqmOMlwOQHImTziG4bgAAAAAOgAAAAAIAACAAAAA3Le+QExrwKIdbGRCXDEM4mqmPWmkkbdNop/+RuyNjbSAAAAABxh/dXxJ7r6Fp1ExtWS4Aaddj1rSLO3foAKGynuIfyEAAAABd8gHAKVSKpYO9Uu9G1XI0HywPzIrYK61KZNZUi6BbwiFU6lo6v04vfPlTWLC5gDdC2pJE3po+aVKc8PmshLY9</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{5E82778F-8CC0-444E-B645-7B5FEE10C92E}"
+      DTS:DTSID="{C54ABF4B-C8AE-4CB6-B446-091C7450283C}"
       DTS:ObjectName="SourceConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADMdjs5qOD+gaW5xT9bPe0jUxT/NdoCvbDGRljlpymS3QAAAAAOgAAAAAIAACAAAABiV7d2Tj2iZ33ladyS0KcU9aigIoN4DsckxCTTc70uASAAAAB+4EL6r5D0YaTdoo+vLh4lO7mA6CdnAAp2vE3qjBjnN0AAAADBKKVOhioeAASuajNO760tYlAC95JIgkcewXU/SariSmEJ7qEzWMfLfDLM3WUoRfdXsMX1y8wjNupg6u4NfgLC</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACJskm4ZuKGrL06OVBxUZnVagzG7bqqyTC0eT4PTDzn3wAAAAAOgAAAAAIAACAAAAA48qhyia+fOz3wakg6c/idk+WEnd99RW7L/GcRndZ/TSAAAACPXQ0eI0/C2e5/mLNxOhYsFm8JrEDGWExYD63eSHb5UEAAAAA2xk0EbwHJrTk6VQfSMLnKnCVze5zlCi0Q4NagRUzvyLQxviw6qjTRKzoUIEmHP7O3K9A+EfMy+wctaFehCwFT</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -53,7 +53,7 @@
       DTS:refId="Package\Data Flow Task 1"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
-      DTS:DTSID="{04124367-1159-4E62-8118-7CE038455367}"
+      DTS:DTSID="{7330EDE6-AC5D-4DCD-9298-A71CCE687B9A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:FailPackageOnFailure="True"
       DTS:LocaleID="-1"
@@ -66,11 +66,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute"
+              refId="Package\Data Flow Task 1\Destination - _tmp_communicationList"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Destination - _tmp_financialaccount-attribute"
+              name="Destination - _tmp_communicationList"
               usesDispositions="true"
               validateExternalMetadata="False"
               version="4">
@@ -82,7 +82,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[_tmp_financialaccount-attribute]</property>
+                  name="OpenRowset">[dbo].[_tmp_communicationList]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -124,7 +124,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
                   connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -132,77 +132,60 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input]"
+                  refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].Columns[Key]"
-                      cachedDataType="wstr"
-                      cachedLength="131"
-                      cachedName="Key"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].ExternalColumns[Key]"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Key]" />
+                      refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].Columns[Name]"
+                      refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input].Columns[Name]"
                       cachedDataType="wstr"
-                      cachedLength="128"
+                      cachedLength="50"
                       cachedName="Name"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].ExternalColumns[Name]"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input].ExternalColumns[Name]"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].Columns[FieldType]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="34"
-                      cachedName="FieldType"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].ExternalColumns[FieldType]"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[FieldType]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].ExternalColumns[Key]"
-                      dataType="wstr"
-                      length="131"
-                      name="Key"
+                      refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id"
                       scale="255" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].ExternalColumns[Name]"
+                      refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input].ExternalColumns[Name]"
                       dataType="wstr"
-                      length="128"
+                      length="50"
                       name="Name"
-                      scale="255" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input].ExternalColumns[FieldType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="34"
-                      name="FieldType"
                       scale="255" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input]">
+                  synchronousInputId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -235,23 +218,18 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
-	 'GB_' + [Column_Name] as [Key]
-	 ,[COLUMN_NAME] as [Name]
-	 , CASE Data_Type
-		WHEN 'datetime' THEN 'Rock.Field.Types.DateTimeFieldType'
-		WHEN 'smalldatetime' THEN 'Rock.Field.Types.DateTimeFieldType'
-		WHEN 'bit' THEN 'Rock.Field.Types.BooleanFieldType'
-		WHEN 'int' THEN 'Rock.Field.Types.IntegerFieldType'
-		ELSE 'Rock.Field.Types.TextFieldType' END as FieldType
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'lkDesignations'
-	AND [Column_Name] In (
-	'SubAcctNum'
-	, 'ChildCareStatement'
-	, 'OneTimeGift'
-	, 'SolomonAcctNum'
-	)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select 
+	EmailListId as [Id]
+	, Case EmailListId
+		When 14 Then 'Women''s Devotional Email List '
+		When 13 THEN 'Rogers Connect Email List'
+		When 55 THEN 'Fayetteville Connect Email'
+		WHEN 25 THEN 'Mosaic Connect Email List'
+		WHEN 59 THEN 'Fayetteville myFeed Email List'
+		WHEN 11 THEN 'Prayer Email List'
+		Else EmailListName End as [Name]
+ From lkEmailLists where
+	EmailListId IN(14,13,55,25,59,11)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -288,14 +266,13 @@ WHERE TABLE_NAME = 'lkDesignations'
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Key]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Key]"
-                      length="131"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Key]"
-                      name="Key"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Name]"
@@ -303,40 +280,22 @@ WHERE TABLE_NAME = 'lkDesignations'
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
-                      length="128"
+                      length="50"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[Name]"
                       name="Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[FieldType]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[FieldType]"
-                      length="34"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[FieldType]"
-                      name="FieldType"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Key]"
-                      dataType="wstr"
-                      length="131"
-                      name="Key" />
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
                       dataType="wstr"
-                      length="128"
+                      length="50"
                       name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[FieldType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="34"
-                      name="FieldType" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -345,24 +304,16 @@ WHERE TABLE_NAME = 'lkDesignations'
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Key]"
-                      dataType="wstr"
-                      length="131"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Key]"
-                      name="Key" />
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
                     <outputColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Name]"
                       dataType="wstr"
-                      length="128"
+                      length="50"
                       lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[Name]"
                       name="Name" />
-                    <outputColumn
-                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[FieldType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="34"
-                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[FieldType]"
-                      name="FieldType" />
                     <outputColumn
                       refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -384,7 +335,7 @@ WHERE TABLE_NAME = 'lkDesignations'
           <paths>
             <path
               refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task 1\Destination - _tmp_financialaccount-attribute.Inputs[Destination Input]"
+              endId="Package\Data Flow Task 1\Destination - _tmp_communicationList.Inputs[Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]" />
           </paths>
@@ -394,7 +345,7 @@ WHERE TABLE_NAME = 'lkDesignations'
     <DTS:Executable
       DTS:refId="Package\Preparation SQL Task 1"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{988BBE17-8057-4855-BA8B-380BE0B43C2E}"
+      DTS:DTSID="{E0DD9CE8-C259-4F93-B77B-86BA095CA110}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:FailPackageOnFailure="True"
       DTS:LocaleID="-1"
@@ -404,19 +355,19 @@ WHERE TABLE_NAME = 'lkDesignations'
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{669350E7-54BF-45D7-8BA2-1DA81DA52E66}"
-          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[_tmp_financialaccount-attribute] (&#xA;[Key] nvarchar(131),&#xA;[Name] nvarchar(128),&#xA;[FieldType] varchar(34) NOT NULL&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{BE04A6BC-1501-4F16-BB52-C102196F2921}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[_tmp_communicationList] (&#xA;[Id] int NOT NULL,&#xA;[Name] nvarchar(50)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{6E7E34C3-4286-4098-82B8-2A96F9C5FE4C\}]"
+      DTS:refId="Package.PrecedenceConstraints[{52CB1242-9296-4E05-AE5F-DAF1C5896E41\}]"
       DTS:CreationName=""
-      DTS:DTSID="{6E7E34C3-4286-4098-82B8-2A96F9C5FE4C}"
+      DTS:DTSID="{52CB1242-9296-4E05-AE5F-DAF1C5896E41}"
       DTS:From="Package\Preparation SQL Task 1"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="{6E7E34C3-4286-4098-82B8-2A96F9C5FE4C}"
+      DTS:ObjectName="{52CB1242-9296-4E05-AE5F-DAF1C5896E41}"
       DTS:To="Package\Data Flow Task 1" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

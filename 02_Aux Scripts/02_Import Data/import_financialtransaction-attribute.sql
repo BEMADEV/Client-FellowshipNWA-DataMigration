@@ -58,3 +58,5 @@ From
 	[_tmp_financialtransaction-attributevalue] tt
 Join FinancialTransaction t on t.ForeignId = tt.Transactionid
 Join Attribute a on a.[key] = tt.AttributeKey
+Left Join AttributeValue av on av.EntityId = t.Id and av.AttributeId = a.Id
+Where av.Id is null

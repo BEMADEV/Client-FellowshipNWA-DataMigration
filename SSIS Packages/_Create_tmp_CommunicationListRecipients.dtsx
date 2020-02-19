@@ -23,7 +23,7 @@
       DTS:ObjectName="DestinationConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=rockdb_conversion_3s;Provider=SQLNCLI11;Auto Translate=false;">
+          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=Rockdb_Conversion_4;Provider=SQLNCLI11;Auto Translate=false;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
             Salt="CuYgg3jD8Pc="
@@ -44,7 +44,7 @@
       DTS:ObjectName="SourceConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=FBCWEBX\FBCSQLWEBX;User ID=sa;Initial Catalog=GBRestore3;Provider=SQLNCLI11;Auto Translate=false;">
+          DTS:ConnectionString="Data Source=FBCWEBX\FBCSQLWEBX;User ID=sa;Initial Catalog=GBRestore2;Provider=SQLNCLI11;Auto Translate=false;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
             Salt="5Texkuym/Uk="
