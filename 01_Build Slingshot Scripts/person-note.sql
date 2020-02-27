@@ -3,7 +3,7 @@ SELECT
 	ContactId as Id
 	, IIF(isNull(ContactType,'')='','No Type',ContactType) as NoteType
 	, isNull(Subject,'') as Caption
-	, IIF(ISNULL(Notes,'')='','(No Text)',Notes) as Text
+	, Cast(IIF(ISNULL(Notes,'')='','(No Text)',Notes) as nvarchar(max)) as Text
 	, 'False' as IsAlert
 	, IIF(Secure = 1, 'True', 'False') as IsPrivateNote
 	, ContactDate as DateTime

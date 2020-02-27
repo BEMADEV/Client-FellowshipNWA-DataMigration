@@ -1,5 +1,5 @@
 Declare @OldAttributeKey nvarchar(36) = 'GB_ScreeningFormDate'
-		, @NewAttributeKey nvarchar(36) = 'ScreeningDate'
+		, @NewAttributeKey nvarchar(36) = 'ScreeningFormDate'
 
 Update av2
 	Set Value = av.[Value]

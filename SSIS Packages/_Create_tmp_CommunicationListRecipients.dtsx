@@ -1,60 +1,48 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/18/2019 4:01:29 PM"
+  DTS:CreationDate="2/26/2020 4:20:26 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="WIN-DDVB4D1IEQT"
   DTS:CreatorName="WIN-DDVB4D1IEQT\Administrator"
-  DTS:DTSID="{6B02D14C-C213-4BFE-AE73-1468256745BC}"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{6CF22192-B9B8-4438-8D65-F87C83DB4E70}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3026.27"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
-  DTS:ObjectName="CommunicationListRecipients"
-  DTS:ProtectionLevel="2"
-  DTS:VersionGUID="{CC79BF52-B912-4095-AB1A-E30A87509432}">
+  DTS:ObjectName="_Create_tmp_CommunicationListRecipients"
+  DTS:VersionGUID="{DC28B3F6-5619-480D-8755-906F4CF7E302}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6C6ABBCE-D627-4533-B135-6BCAB8E856E2}"
+      DTS:DTSID="{E7E90AD1-23CA-4754-A92D-982691D80D59}"
       DTS:ObjectName="DestinationConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=Rockdb_Conversion_4;Provider=SQLNCLI11;Auto Translate=false;">
-          <EncryptedData
-            Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="CuYgg3jD8Pc="
-            IV="lXXcxzYSMHTlCIIwEJM3fg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
-            <EncryptionMethod
-              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
-            <CipherData>
-              <CipherValue>lXXcxzYSMHTlCIIwEJM3foWObqz8L7p4tu6z+Kou66IogE6DFuzSMqdXSFTv6TbtKQKwxmFGfm7BD5Ehn88P3DkrQwnpJR1e2q6wms5n7swNiorW4wuSv924aobDYeUaBOhWpPm78wD8ijalwuujsmqFH3jwTj0CNh2Ck7BVWLZqeXyBUwk86PmiV/2p/Nlr</CipherValue>
-            </CipherData>
-          </EncryptedData>
+          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=rockdb_Conversion_5;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADmYCw4wOVqhwlrRAVwjjOj6UnmCN/BfwEijrtoounWsgAAAAAOgAAAAAIAACAAAAAccDtuYRJvVlRZy281rYEE4iLhMyS7R09+Grohfq/HziAAAABFYSm1lSwjywbfe0FCh9T/lbsO5AkWzMKvpn0s6tm1iUAAAACPSKXhxdtQjAbBZv/28+ieHvp/y7UYHtLon7ouITDhwhct6o0EWwfp/Ychj3fTiyS4gBUwOXO443rdtEmmolni</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{51F97B5C-5046-4016-A037-42E6BED6C993}"
+      DTS:DTSID="{25EEF176-BB69-4BB5-917B-98A55BFB0FA6}"
       DTS:ObjectName="SourceConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=FBCWEBX\FBCSQLWEBX;User ID=sa;Initial Catalog=GBRestore2;Provider=SQLNCLI11;Auto Translate=false;">
-          <EncryptedData
-            Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="5Texkuym/Uk="
-            IV="GFKQxAYvj0Z0/Nay2nN3Ew==" xmlns="http://www.w3.org/2001/04/xmlenc#">
-            <EncryptionMethod
-              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
-            <CipherData>
-              <CipherValue>GFKQxAYvj0Z0/Nay2nN3E8wTGvQkTQjUt7ni6SSFQ6Xegjf1SLfYIKGD9uby7vrT8Nw/s7bnVD1De9znGF1r5c8aDbRJG2bhYjI5G0P64Lb38WN4jUDaI94eKc7GjvF2hlvh6qJJuauGREjCve24f+0xM5Jxz5Zky3TgZVcKCA5YOMtEPgQxpr7w66LLAuU9</CipherValue>
-            </CipherData>
-          </EncryptedData>
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD6y71+iyCuJ1PUvg8dN0c8UTnGxDRnRhOUbZPmlSw+JgAAAAAOgAAAAAIAACAAAABjdqH6X/tJ9AQYGuWFJG3fcH/umLCi4vYXNlpGdRk1hiAAAAA5zPgnjsdBB8sn6qw/oR1vz94ER7oitxbXtobhb3QpIUAAAAD/Y4gUne2ctm6JIrecA7JaE2nOe+lrYIvy3PRXT6oufQMEHTHUmx2uwUU7H46VZ7tj7JKB11tFr9CU0kvcC3If</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -65,7 +53,7 @@
       DTS:refId="Package\Data Flow Task 1"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
-      DTS:DTSID="{DDA30BC3-CEC8-4FDD-B75E-81EB08FB3F89}"
+      DTS:DTSID="{83F0BEBB-10D0-4FF0-BBDC-FDB63F74BFA9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:FailPackageOnFailure="True"
       DTS:LocaleID="-1"
@@ -352,7 +340,7 @@
     <DTS:Executable
       DTS:refId="Package\Preparation SQL Task 1"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:DTSID="{A065C636-F290-4C59-BE22-434A5183E3EA}"
+      DTS:DTSID="{419F4AD9-5AC1-46F8-91EA-79B05F4C3653}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:FailPackageOnFailure="True"
       DTS:LocaleID="-1"
@@ -362,19 +350,19 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6C6ABBCE-D627-4533-B135-6BCAB8E856E2}"
+          SQLTask:Connection="{E7E90AD1-23CA-4754-A92D-982691D80D59}"
           SQLTask:SqlStatementSource="CREATE TABLE [dbo].[_tmp_CommunicationListRecipients] (&#xA;[IndID] int NOT NULL,&#xA;[EmailListID] int NOT NULL&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[{D8E53E74-0297-4C15-A908-20F0B4808DC5\}]"
+      DTS:refId="Package.PrecedenceConstraints[{8A6096AF-4650-4D50-A991-C4DDDDC12CB3\}]"
       DTS:CreationName=""
-      DTS:DTSID="{D8E53E74-0297-4C15-A908-20F0B4808DC5}"
+      DTS:DTSID="{8A6096AF-4650-4D50-A991-C4DDDDC12CB3}"
       DTS:From="Package\Preparation SQL Task 1"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="{D8E53E74-0297-4C15-A908-20F0B4808DC5}"
+      DTS:ObjectName="{8A6096AF-4650-4D50-A991-C4DDDDC12CB3}"
       DTS:To="Package\Data Flow Task 1" />
   </DTS:PrecedenceConstraints>
 </DTS:Executable>

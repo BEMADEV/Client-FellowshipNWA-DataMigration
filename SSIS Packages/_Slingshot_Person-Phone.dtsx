@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/26/2020 9:51:43 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-DDVB4D1IEQT"
+  DTS:CreatorName="WIN-DDVB4D1IEQT\Administrator"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{472B903E-84C9-46DA-81A1-A4943BA0223E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="_Slingshot_Person-Phone"
+  DTS:VersionGUID="{CB945F81-2A4B-41C4-A901-CE8458E7E4C9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{495D6E9D-BACF-499E-BF65-BB8237B32E76}"
+      DTS:ObjectName="DestinationConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="Z:\OneDrive - BEMA Information Technologies LLC\Client Files\Fellowship NWA\Slingshot Data\person-phone.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PersonId"
+              DTS:DTSID="{58F7F6DA-CD22-4387-8B13-A5D1F24BC3F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhoneNumber"
+              DTS:DTSID="{7188B66B-B909-4740-A3EF-7FB65FDAC415}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhoneType"
+              DTS:DTSID="{94128543-9DC6-4A01-995A-A7546BC1578B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IsMessagingEnabled"
+              DTS:DTSID="{D231CC20-B754-4C6D-8E89-C184F8B92032}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IsUnlisted"
+              DTS:DTSID="{B4DE2B8B-8FD8-417C-B55A-6765D444F27D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BA0F0ACD-0FF5-4A92-A11E-24B03097C7BF}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=FBCWEBX\FBCSQLWEBX;User ID=sa;Initial Catalog=GBRestore2;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgaes5UwdlUi1cQpQZXvDMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABWHWdO49NUSbLH4hiLqeGPD70rQ1JKvAnowt53Y5RRTAAAAAAOgAAAAAIAACAAAADZJalki7+sLyH9NxSQxKLaD04wQ67ccVt2h4ol3sw9ySAAAABUe+172Igj7YbEcjxsFU1ntWA2eIi0dJIxUUGgTIIPB0AAAACyRlrsGUeSVqDSvjT7tfg+5n1056VLUAeHIfYPBZEalygpLvGQkSyZR3XRglWE23bhmjIesHsh391LVkCY+cql</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{D1F1682C-D4CE-4C1C-AF4D-3A22F0B20B23}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - person-phone_csv"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Destination - person-phone_csv"
+              validateExternalMetadata="False">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - person-phone_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].Columns[PersonId]"
+                      cachedDataType="i4"
+                      cachedName="PersonId"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[PersonId]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PersonId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].Columns[PhoneNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="PhoneNumber"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[PhoneNumber]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PhoneNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].Columns[PhoneType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PhoneType"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[PhoneType]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PhoneType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].Columns[IsMessagingEnabled]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="IsMessagingEnabled"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[IsMessagingEnabled]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[IsMessagingEnabled]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].Columns[IsUnlisted]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="IsUnlisted"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[IsUnlisted]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[IsUnlisted]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[PersonId]"
+                      dataType="i4"
+                      name="PersonId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[PhoneNumber]"
+                      dataType="wstr"
+                      length="25"
+                      name="PhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[PhoneType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PhoneType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[IsMessagingEnabled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IsMessagingEnabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input].ExternalColumns[IsUnlisted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IsUnlisted" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+[IndID] as PersonId
+,[Phone1] as PhoneNumber
+,dbo.ufn_ProperCase([Phone1Type]) as PhoneType
+,IIF(dbo.ufn_ProperCase([Phone1Type]) = 'Cell','True','False') as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+[Phone1] is not null 
+and [Phone1] != '' AND [Phone1] not like '(   )%'
+and [Phone1Type] is not null
+and [Phone1Type] != ''
+
+UNION 
+
+SELECT
+[IndID] as PersonId
+,[Phone2] as PhoneNumber
+,dbo.ufn_ProperCase([Phone2Type]) as PhoneType
+,IIF(dbo.ufn_ProperCase([Phone2Type]) = 'Cell','True','False') as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+[Phone2] is not null 
+and [Phone2] != '' AND [Phone2] not like '(   )%'
+and [Phone2Type] is not null
+and [Phone2Type] != ''
+
+UNION 
+
+SELECT
+[IndID] as PersonId
+,[Phone3] as PhoneNumber
+,dbo.ufn_ProperCase([Phone3Type]) as PhoneType
+,IIF(dbo.ufn_ProperCase([Phone3Type]) = 'Cell','True','False') as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+[Phone3] is not null 
+and [Phone3] != '' AND [Phone3] not like '(   )%'
+and [Phone3Type] is not null
+and [Phone3Type] != ''
+
+-- UNION 
+
+/*
+SELECT 
+[IndID] as PersonId
+,[Phone4] as PhoneNumber
+,dbo.ufn_ProperCase([Phone4Type]) as PhoneType
+,IIF(dbo.ufn_ProperCase([Phone4Type]) = 'Cell','True','False') as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+[Phone4] is not null 
+and [Phone4] != '' AND [Phone4] not like '(   )%'
+and [Phone4Type] is not null
+and [Phone4Type] != ''
+  
+UNION 
+*/
+/*
+SELECT
+[IndID] as PersonId
+,[HomePhone] as PhoneNumber
+,'Home' as PhoneType
+,'False' as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+[HomePhone] is not null
+and [HomePhone] != ''
+AND [HomePhone] not like '(   )%'
+
+UNION 
+
+SELECT
+[IndID] as PersonId
+,WorkPhone as PhoneNumber
+,'Work' as PhoneType
+,'False' as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+WorkPhone is not null 
+and WorkPhone != '' 
+ AND WorkPhone not like '(   )%'
+
+UNION 
+
+SELECT
+[IndID] as PersonId
+,CellPhone as PhoneNumber
+,'Cell' as PhoneType
+,'True' as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+CellPhone is not null 
+and CellPhone != ''
+ AND CellPhone not like '(   )%'
+
+UNION 
+*/
+/*
+SELECT
+[IndID] as PersonId
+,FaxPhone as PhoneNumber
+,'Fax' as PhoneType
+,'False' as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+FaxPhone is not null 
+and FaxPhone != ''
+AND FaxPhone not like '(   )%'
+
+UNION 
+*/
+/*
+SELECT
+[IndID] as PersonId
+,OtherPhone as PhoneNumber
+,dbo.ufn_ProperCase([OtherPhoneType]) as PhoneType
+,IIF(dbo.ufn_ProperCase([OtherPhoneType]) = 'Cell','True','False') as IsMessagingEnabled
+, 'False' as IsUnlisted
+FROM [tblIndividual]
+Where 
+OtherPhone is not null 
+and OtherPhone != '' 
+AND OtherPhone not like '(   )%'
+and [OtherPhoneType] is not null
+and [OtherPhoneType] != ''
+*/</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - Query.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PersonId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[PersonId]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PersonId]"
+                      name="PersonId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PhoneNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumber]"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PhoneNumber]"
+                      name="PhoneNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PhoneType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneType]"
+                      length="8000"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[PhoneType]"
+                      name="PhoneType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[IsMessagingEnabled]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[IsMessagingEnabled]"
+                      length="5"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[IsMessagingEnabled]"
+                      name="IsMessagingEnabled"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[IsUnlisted]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[IsUnlisted]"
+                      length="5"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].Columns[IsUnlisted]"
+                      name="IsUnlisted"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[PersonId]"
+                      dataType="i4"
+                      name="PersonId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumber]"
+                      dataType="wstr"
+                      length="25"
+                      name="PhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PhoneType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[IsMessagingEnabled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IsMessagingEnabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output].ExternalColumns[IsUnlisted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="IsUnlisted" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[PersonId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[PersonId]"
+                      name="PersonId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[PhoneNumber]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[PhoneNumber]"
+                      name="PhoneNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[PhoneType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[PhoneType]"
+                      name="PhoneType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[IsMessagingEnabled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[IsMessagingEnabled]"
+                      name="IsMessagingEnabled" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[IsUnlisted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[IsUnlisted]"
+                      name="IsUnlisted" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Destination - person-phone_csv.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - Query.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

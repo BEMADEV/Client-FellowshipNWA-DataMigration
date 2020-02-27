@@ -23,7 +23,7 @@
       DTS:ObjectName="DestinationConnectionOLEDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=rockdb_Conversion_4;Provider=SQLNCLI11;Auto Translate=false;">
+          DTS:ConnectionString="Data Source=fnwa-sqlprod.database.windows.net;User ID=rockdb;Initial Catalog=rockdb_conversion_5;Provider=SQLNCLI11;Auto Translate=false;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
@@ -218,11 +218,13 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select Distinct
-	FRegion
-	, i.IndID as PersonId
-From tblFamily f
-Join tblIndividual i on i.FamilyId = f.FamilyID</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">
+                  Select Distinct
+                  isNull(FRegion, 'Other') as FRegion
+                  , i.IndID as PersonId
+                  From tblFamily f
+                  Join tblIndividual i on i.FamilyId = f.FamilyID
+                </property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
