@@ -27,4 +27,4 @@ Join Attribute a1 on a1.[Key] = @OldAttributeKey and a1.Id = av.AttributeId
 Left Join Attribute a2 on a2.[Key] = @NewAttributeKey
 Left Join AttributeValue av2 on av2.EntityId = av.EntityId and av2.AttributeId = a2.Id
 Where av2.Id is null
-and av.[Value] is not null or av.[Value] != ''
+and ( av.[Value] is not null or av.[Value] != '' )
